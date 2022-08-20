@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block extra_media %}
+  {{ formss.media }}
+{% endblock %}
+
+{% block content %}
+<div class="fieldWrapper">
+    {{ form.signature.errors }}
+    <label for="{{ form.signature.id_for_label }}">Your message:</label>
+    {{ form.signature }}
+</div>
+<h1>Hello {{user_name}}</h1>
+  <form action="" method="post">
+    {{ formss }}
+    <input type="submit" value="Save" />
+    {% csrf_token %}
+</form>
+{% endblock %}
+
